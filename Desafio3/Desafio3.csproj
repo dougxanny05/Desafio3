@@ -30,9 +30,4 @@
     </PackageReference>
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="SSRS\" />
-    <Folder Include="Pages\" />
-  </ItemGroup>
-
 </Project>

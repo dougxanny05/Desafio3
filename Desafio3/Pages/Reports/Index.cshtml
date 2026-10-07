@@ -1,0 +1,39 @@
+@page
+@model Desafio3.Pages.Reports.IndexModel
+@{
+    ViewData["Title"] = "Reportes de recetas";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewData["Title"]</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 2rem; }
+        form { margin-bottom: 1.5rem; }
+        input, button { padding: .5rem; }
+        iframe { border: 1px solid #ccc; min-height: 600px; width: 100%; }
+        section { margin-bottom: 3rem; }
+    </style>
+</head>
+<body>
+    <h1>Reportes de recetas</h1>
+
+    <section>
+        <h2>Reporte 1: recetas e ingredientes</h2>
+        <form method="get">
+            <label for="maxTiempo">Tiempo máximo de preparación (minutos):</label>
+            <input id="maxTiempo" name="maxTiempo" type="number" min="1" value="@Model.MaxTiempo" />
+            <button type="submit">Filtrar reporte</button>
+        </form>
+        <iframe title="Recetas e ingredientes" src="@Model.ReporteRecetasUrl"></iframe>
+    </section>
+
+    <section>
+        <h2>Reporte 2: pasos por receta</h2>
+        <iframe title="Pasos por receta" src="@Model.ReportePasosUrl"></iframe>
+    </section>
+</body>
+</html>
